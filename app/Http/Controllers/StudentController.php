@@ -26,7 +26,7 @@ class StudentController extends Controller
         ],
         [
             'id' => 3,
-             'nis' => '22100003',
+            'nis' => '22100003',
             'name' => 'Bryan',
             'class' => 'XII TKJ 3',
             'major' => 'TKJ'
@@ -34,7 +34,7 @@ class StudentController extends Controller
         [
             'id' => 4,
              'nis' => '22100004',
-            'name' => 'Stevent',
+            'name' => 'Hani',
             'class' => 'XII BID',
             'major' => 'BID'
         ]
