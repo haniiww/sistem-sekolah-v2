@@ -75,7 +75,7 @@ class MajorController extends Controller
     public function edit(string $id)
     {
         $title = "Sistem Sekolah - Edit Jurusan";
-        return view('majors.create', [
+        return view('majors.edit', [
             'title' => $title
         ]);
     }

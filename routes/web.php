@@ -20,10 +20,10 @@ Route::get('/', function () {
  
 Route::name('teachers.')->prefix('teachers')->group(function () {
     Route::get('/', [TeacherController::class, 'index'])->name('index');
+    Route::get('/{id}', [TeacherController::class, 'show'])->name('show')->whereNumber('id');
     Route::get('/create', [TeacherController::class, 'create'])->name('create');
-    Route::post('/', [TeacherController::class, 'store'])->name('store');
-    Route::get('/{id}', [TeacherController::class, 'show'])->name('show');
     Route::get('/{id}/edit', [TeacherController::class, 'edit'])->name('edit');
+    Route::post('/', [TeacherController::class, 'store'])->name('store');
     Route::put('/{id}', [TeacherController::class, 'update'])->name('update');
     Route::delete('/{id}', [TeacherController::class, 'destroy'])->name('destroy');
 });
@@ -49,3 +49,4 @@ Route::name('classes.')->prefix('classes')->group(function () {
 });
  
 Route::resource('majors', MajorController::class);
+ 
