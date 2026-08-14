@@ -3,19 +3,13 @@
 @section('title', $title)
 
 @section('content')
-    <div class="mb-8 border-b border-[#E5E3DB] pb-5">
-        <a href="" class="text-xs uppercase tracking-[0.15em] text-slate-400 hover:text-[#A16207]">&larr; Jurusan
-            </a>
-        <h1 class="font-display mt-2 text-3xl font-semibold text-[#16213A]">Tambah Jurusan</h1>
-        <p class="mt-1 text-sm text-slate-500">Isi data untuk menambahkan jurusan baru</p>
-    </div>
-
+    <x-page-header breadcrumb="Jurusan" breadcrumb-route="majors.index" title="Tambah Jurusan"
+        description="Tambahkan data jurusan baru ke dalam sistem sekolah" />
 
     <form action="" method="POST" class="space-y-6 border border-[#E5E3DB] bg-white p-8">
 
         <div>
-            <label for="code"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Kode
+            <label for="code" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Kode
                 Jurusan</label>
             <input type="text" id="code" name="code" placeholder="Contoh: AKL"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
@@ -23,8 +17,7 @@
 
 
         <div>
-            <label for="name"
-                class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nama
+            <label for="name" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Nama
                 Jurusan</label>
             <input type="text" id="name" name="name" placeholder="Contoh: Akuntansi dan Keuangan Lembaga"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none">
@@ -34,8 +27,7 @@
         <div>
             <label for="description"
                 class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Deskripsi</label>
-            <textarea id="description" name="description" rows="4"
-                placeholder="Penjelasan singkat mengenai jurusan"
+            <textarea id="description" name="description" rows="4" placeholder="Penjelasan singkat mengenai jurusan"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none"></textarea>
         </div>
 
