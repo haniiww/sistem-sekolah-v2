@@ -14,7 +14,7 @@
                 Nama Kelas
             </label>
 
-            <input type="text" id="name" name="name" value="XII AKL 1"
+            <input type="text" id="name" name="name" value="{{ $class['name'] }}"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
         </div>
 
@@ -26,9 +26,11 @@
 
             <select id="grade" name="grade"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
-                <option value="X">X</option>
-                <option value="XI">XI</option>
-                <option value="XII" selected>XII</option>
+
+                <option value="X" {{ $class['grade'] == 'X' ? 'selected' : '' }}>X</option>
+                <option value="XI" {{ $class['grade'] == 'XI' ? 'selected' : '' }}>XI</option>
+                <option value="XII" {{ $class['grade'] == 'XII' ? 'selected' : '' }}>XII</option>
+
             </select>
         </div>
 
@@ -41,9 +43,11 @@
             <select id="major_id" name="major_id"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
-                <option value="1" selected>Akuntansi dan Keuangan Lembaga</option>
-                <option value="2">Teknik Komputer dan Jaringan</option>
-                <option value="3">Bisnis Digital</option>
+                @foreach ($majors as $major)
+                    <option value="{{ $major['id'] }}" {{ $class['major_id'] == $major['id'] ? 'selected' : '' }}>
+                        {{ $major['code'] }}
+                    </option>
+                @endforeach
 
             </select>
         </div>
@@ -57,8 +61,11 @@
             <select id="teacher_id" name="teacher_id"
                 class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
 
-                <option value="1" selected>Budi Santoso</option>
-                <option value="2">Siti Aminah</option>
+                @foreach ($teachers as $teacher)
+                    <option value="{{ $teacher['id'] }}" {{ $class['teacher_id'] == $teacher['id'] ? 'selected' : '' }}>
+                        {{ $teacher['name'] }}
+                    </option>
+                @endforeach
 
             </select>
         </div>
