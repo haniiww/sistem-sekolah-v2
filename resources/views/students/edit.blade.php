@@ -56,9 +56,9 @@
                     <select id="major" name="major"
                         class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
                         <option value="">Pilih Jurusan</option>
-                        <option value="AKL" @selected(old('major', $student->MAJOR) === 'AKL')>AKL</option>
-                        <option value="TKJ" @selected(old('major', $student->MAJOR) === 'tkj')>TKJ</option>
-                        <option value="BiD" @selected(old('major', $student->MAJOR) === 'BiD')>BiD</option>
+                        <option value="AKL" @selected(old('major', $student->major) === 'AKL')>AKL</option>
+                        <option value="TKJ" @selected(old('major', $student->major) === 'TKJ')>TKJ</option>
+                        <option value="BiD" @selected(old('major', $student->major) === 'BiD')>BiD</option>
                     </select>
                     @error('major')
                         <span class="text-red-500 py-2">{{ $message }}</span>
